@@ -80,7 +80,7 @@ WriteResult({ "nInserted" : 1 })TORAGE  [conn2] createCollection: quizdb.questio
 
 > db
 
-> quizdb
+quizdb
 
 > db.question.find()
 
