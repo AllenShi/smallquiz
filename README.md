@@ -1,6 +1,6 @@
 # Demo Project for Small Quit using MongoDB
 
-## Pre-requisite
+## Pre-requisition
 
 ### Install MongoDB on MacOS
 
@@ -61,39 +61,51 @@ mongo --host 127.0.0.1:27017
 mongo --host 127.0.0.1:27017
 ~~~
 
-> show dbs
+~~~
+show dbs
+~~~
 
-admin   0.000GB  
-config  0.000GB  
-local   0.000GB  
-test    0.000GB  
+> admin   0.000GB  
+> config  0.000GB  
+> local   0.000GB  
+> test    0.000GB  
 
-> use quizdb
+~~~
+use quizdb
 
-> db.question.insert({"_id": 100, "passageid": 100, "stem": "stem0", "order": 0, "analysis": "Farmer0", "rightAnswer": "B"})  
+db.question.insert({"_id": 100, "passageid": 100, "stem": "stem0", "order": 0, "analysis": "Farmer0", "rightAnswer": "B"})  
+~~~
 
-WriteResult({ "nInserted" : 1 })TORAGE  [conn2] createCollection: quizdb.question with generated UUID: d93614ac-65b5-4e59-a141-a0e426e8d53c
+> WriteResult({ "nInserted" : 1 })TORAGE  [conn2] createCollection: quizdb.question with generated UUID: d93614ac-65b5-4e59-a141-a0e426e8d53c
 
-> db.question.insert({"_id": 101, "passageid": 101, "stem": "stem1", "order": 1, "analysis": "Farmer1", "rightAnswer": "B"})  
+~~~
+db.question.insert({"_id": 101, "passageid": 101, "stem": "stem1", "order": 1, "analysis": "Farmer1", "rightAnswer": "B"})  
+~~~
 
-  WriteResult({ "nInserted" : 1 })
+> WriteResult({ "nInserted" : 1 })
 
-> db
+~~~
+db
+~~~
 
-quizdb
+> quizdb
 
-> db.question.find()
+~~~
+db.question.find()
+~~~
 
-{ "_id" : 100, "passageid" : 100, "stem" : "stem0", "order" : 0, "analysis" : "Farmer0", "rightAnswer" : "B" }
-{ "_id" : 101, "passageid" : 101, "stem" : "stem1", "order" : 1, "analysis" : "Farmer1", "rightAnswer" : "B" }
+> { "_id" : 100, "passageid" : 100, "stem" : "stem0", "order" : 0, "analysis" : "Farmer0", "rightAnswer" : "B" }
+> { "_id" : 101, "passageid" : 101, "stem" : "stem1", "order" : 1, "analysis" : "Farmer1", "rightAnswer" : "B" }
 
-> show dbs
+~~~
+show dbs
+~~~
 
-admin   0.000GB  
-config  0.000GB  
-local   0.000GB  
-quizdb  0.000GB  
-test    0.000GB  
+> admin   0.000GB  
+> config  0.000GB  
+> local   0.000GB  
+> quizdb  0.000GB  
+> test    0.000GB  
 
 ## Run Application
 
