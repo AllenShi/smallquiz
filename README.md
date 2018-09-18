@@ -1,4 +1,4 @@
-# Demo Project for Small Quit using MongoDB
+# Demo Project for Small Quit
 
 ## Pre-requisition
 
@@ -107,6 +107,33 @@ show dbs
 > quizdb  0.000GB  
 > test    0.000GB  
 
+### Install Redis on MacOS
+
+[Reference](https://gist.github.com/tomysmile/1b8a321e7c58499ef9f9441b2faa0aa8)
+
+#### Laydown Redis
+~~~
+brew update
+sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
+brew install redis
+~~~
+
+#### Start Redis service
+~~~
+brew services start redis
+~~~
+
+Alternatively  
+
+~~~
+redis-server /usr/local/etc/redis.conf
+~~~
+
+#### Access from redis-cli
+~~~
+redis-cli
+~~~
+
 ## Run Application
 
 ### Configure DB
@@ -139,8 +166,22 @@ Working Directory: Select from Workspace
 
 #### Run unit test
 
+> Run test using default profile for MonogoDB
+
 ~~~
 ./gradlew test
+~~~
+
+> Run test using JPA profile
+
+~~~
+./gradlew test -Dspring.profiles.active=JPA
+~~~
+
+> Run test using Redis profile
+
+~~~
+./gradlew test -Dspring.profiles.active=Redis
 ~~~
 
 #### Run Open API

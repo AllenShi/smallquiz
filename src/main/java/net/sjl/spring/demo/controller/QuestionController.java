@@ -13,8 +13,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import net.sjl.spring.demo.entity.Question;
-import net.sjl.spring.demo.service.QuestionService;
+import net.sjl.spring.demo.domain.entity.Question;
+import net.sjl.spring.demo.domain.service.QuestionService;
 
 @RestController
 @Api(value = "Quiz REST API", tags = {"quiz"})
@@ -27,7 +27,7 @@ public class QuestionController {
 	@RequestMapping(method = RequestMethod.GET, value = "/api/questions/passage/{passageId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE )
     @ApiResponses(value = {@ApiResponse(code = 404, message = "The requested question is not found.")})
     public ResponseEntity<Question> getQuestionByPassageId(@PathVariable("passageId") @ApiParam(value = "Passage Id", required = true) int passageId) {
-		Question question = service.retrieveQuestion(passageId);
+		Question question = service.retrieveQuestionWithPassageId(passageId);
         
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(question);
     } 
